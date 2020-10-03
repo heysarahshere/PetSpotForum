@@ -1,0 +1,413 @@
+
+body .blob {
+    z-index: 1;
+    --footer-background: #ffffff;
+    display: grid;
+    position: relative;
+    grid-area: blob;
+    min-height: 12rem;
+}
+
+
+body .blob .bubbles {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+    height: 1rem;
+    -webkit-filter: url("#blob");
+    filter: url("#blob");
+}
+body .blob .bubbles .bubble {
+    position: absolute;
+    left: var(--position, 50%);
+    background: var(--footer-background);
+    border-radius: 100%;
+    -webkit-animation: bubble2-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble2-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+    animation: bubble2-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble2-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+    -webkit-transform: translate(-50%, 100%);
+    transform: translate(-50%, 100%);
+}
+body .blob .content {
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 4rem;
+    padding: 6rem;
+
+}
+@media (max-width: 500px) {
+
+    body .blob .content {
+        padding: 9rem;
+    }
+}
+@media (min-width: 768px) {
+
+    body .blob .content {
+        padding: 4rem;
+    }
+}
+
+@media (min-width: 901px) {
+
+    body .blob .content {
+        padding: 2rem;
+    }
+}
+
+@media (min-width: 1301px) {
+
+    body .blob .content {
+        padding: 1rem;
+    }
+}
+
+@media (min-width: 1601px) {
+
+    body .blob .content {
+        padding: 0;
+    }
+}
+
+body .blob .content a, body .blob .content p {
+    color: #F5F7FA;
+    text-decoration: none;
+}
+body .blob .content b {
+    color: #ffffff;
+}
+body .blob .content p {
+    margin: 0;
+    font-size: .75rem;
+}
+body .blob .content > div {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+body .blob .content > div > div {
+    margin: 0.25rem 0;
+}
+body .blob .content > div > div > * {
+    margin-right: .5rem;
+}
+body .blob .content > div .image {
+    align-self: center;
+    width: 4rem;
+    height: 4rem;
+    margin: 0.25rem 0;
+    background-size: cover;
+    background-position: center;
+}
+
+@-webkit-keyframes bubble2-size {
+    0%, 75% {
+        width: var(--size, 4rem);
+        height: var(--size, 4rem);
+    }
+    100% {
+        width: 0rem;
+        height: 0rem;
+    }
+}
+
+@keyframes bubble2-size {
+    0%, 75% {
+        width: var(--size, 4rem);
+        height: var(--size, 4rem);
+    }
+    100% {
+        width: 0rem;
+        height: 0rem;
+    }
+}
+@-webkit-keyframes bubble2-move {
+    0% {
+        bottom: var(--distance, 10rem);
+    }
+    100% {
+        bottom: -4rem;
+    }
+}
+@keyframes bubble2-move {
+    0% {
+        bottom: var(--distance, 10rem);
+    }
+    100% {
+        bottom: -4rem;
+    }
+}
+
+/*-------------- blob button ---------------*/
+/*@import url("https://fonts.googleapis.com/css?family=Raleway:900");*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+svg {
+    width: 82vw;
+    position: absolute;
+    top: -2%;
+    left: 50vw;
+    max-width: 280px;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+    -moz-transform: translateY(-50%) translateX(-50%);
+    z-index: 1000;
+    -webkit-filter: drop-shadow(0 0 40px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(0 0 40px rgba(0, 0, 0, 0.3));
+}
+svg path {
+    /*-webkit-animation: blob 2s infinite forwards;*/
+    -webkit-animation-name: blob;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-fill-mode: forwards;
+    animation: blob 2s infinite forwards;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+}
+svg path:hover {
+    fill: #fafafa;
+}
+svg text {
+    font-size: 45px;
+}
+
+@-webkit-keyframes blob {
+    25% {
+        d: path("M 90 210 C 90 180 110 160 130 160 C 160 160 180 140 200 130 C 230 120 270 100 290 140 C 310 170 340 100 360 140 C 370 160 390 180 390 210 C 390 240 380 290 350 280 C 330 270 300 280 280 290 C 260 300 230 300 220 290 C 200 270 160 310 140 280 C 130 260 90 240 90 210 ");
+        -webkit-transform: rotate(-5deg);
+        transform: rotate(-5deg);
+    }
+    50% {
+        d: path("M 90 210 C 90 180 100 150 120 130 C 150 100 180 140 200 130 C 230 120 270 100 290 140 C 300 160 330 130 360 140 C 390 150 390 180 390 210 C 390 240 380 300 350 280 C 330 270 320 230 280 260 C 260 280 220 310 200 290 C 180 270 160 280 140 280 C 110 280 90 240 90 210");
+    }
+    75% {
+        d: path("M 90 210 C 90 180 110 180 130 170 C 150 160 170 130 200 130 C 240 130 260 150 290 140 C 310 130 340 120 360 140 C 380 160 390 180 390 210 C 390 240 380 260 350 270 C 320 280 290 270 270 260 C 240 250 230 280 210 290 C 180 310 130 300 110 280 C 90 260 90 240 90 210");
+        -webkit-transform: rotate(5deg);
+        transform: rotate(5deg);
+    }
+}
+
+@keyframes blob {
+    25% {
+        d: path("M 90 210 C 90 180 110 160 130 160 C 160 160 180 140 200 130 C 230 120 270 100 290 140 C 310 170 340 100 360 140 C 370 160 390 180 390 210 C 390 240 380 290 350 280 C 330 270 300 280 280 290 C 260 300 230 300 220 290 C 200 270 160 310 140 280 C 130 260 90 240 90 210 ");
+        -webkit-transform: rotate(-5deg);
+        transform: rotate(-5deg);
+    }
+    50% {
+        d: path("M 90 210 C 90 180 100 150 120 130 C 150 100 180 140 200 130 C 230 120 270 100 290 140 C 300 160 330 130 360 140 C 390 150 390 180 390 210 C 390 240 380 300 350 280 C 330 270 320 230 280 260 C 260 280 220 310 200 290 C 180 270 160 280 140 280 C 110 280 90 240 90 210");
+    }
+    75% {
+        d: path("M 90 210 C 90 180 110 180 130 170 C 150 160 170 130 200 130 C 240 130 260 150 290 140 C 310 130 340 120 360 140 C 380 160 390 180 390 210 C 390 240 380 260 350 270 C 320 280 290 270 270 260 C 240 250 230 280 210 290 C 180 310 130 300 110 280 C 90 260 90 240 90 210");
+        -webkit-transform: rotate(5deg);
+        transform: rotate(5deg);
+    }
+}
+
+.blob-border {
+    background: linear-gradient(-45deg, #00569c, #5e071f, #066e80, #007945);
+    background-size: 1800% 1800%;
+    width: 100%;
+    height: auto;
+    border-radius: 60% 70% 40%  30% / 50% 60% 40% 50%;
+    overflow: hidden;
+    animation: morph 8s linear infinite, gradient 10s ease infinite;
+
+}
+
+@keyframes morph{
+    0%, 100% {
+        border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+    }
+    34% {
+        border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+    }
+    67% {
+        border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%;
+    }
+}
+
+.blob-border2 {
+    background: linear-gradient(-45deg, #00569c, #5e071f, #066e80, #007945);
+    background-size: 1800% 1800%;
+    width: 100%;
+    height: auto;
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    overflow: hidden;
+    animation: morph2 8s linear infinite, gradient 10s ease infinite;
+}
+
+@keyframes morph2{
+    0%, 100% {
+        border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%;
+    }
+    34% {
+        border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+    }
+    67% {
+        border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+    }
+}
+
+.blob-border3 {
+    background: linear-gradient(-45deg, #00569c, #5e071f, #066e80, #007945);
+    background-size: 1800% 1800%;
+    width: 100%;
+    height: auto;
+    border-radius:  70% 30% 40% 60% / 60% 50% 40% 50%;
+    overflow: hidden;
+    animation: morph3 8s linear infinite, gradient 10s ease infinite;
+}
+
+@keyframes morph3{
+    0%, 100% {
+        border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%;
+    }
+    34% {
+        border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+    }
+    67% {
+        border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+    }
+}
+
+.blob-border4 {
+    background: linear-gradient(-45deg, #00569c, #5e071f, #066e80, #007945);
+    background-size: 1800% 1800%;
+    width: 100%;
+    height: auto;
+    border-radius:  30% 50% 40% 60% / 60% 50% 30% 50%;
+    overflow: hidden;
+    animation: morph4 8s linear infinite, gradient 10s ease infinite;
+}
+
+@keyframes morph4{
+    0%, 100% {
+        border-radius: 70% 30% 40% 50% / 30% 30% 60% 70%;
+    }
+    34% {
+        border-radius: 40% 60% 70% 30% / 40% 60% 40% 50%;
+    }
+    67% {
+        border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+    }
+}
+.blob-border-face {
+    background-image: url('../images/self.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 300px;
+    height: auto;
+    border-radius:  50% 50% 50% 50% / 50% 50% 50% 50%;
+    overflow: hidden;
+    animation: morph5 8s linear infinite;
+}
+
+@keyframes morph5{
+    0%, 100% {
+        border-radius:  50% 50% 50% 50% / 50% 50% 50% 50%;
+    }
+    4% {
+        border-radius: 70% 60% 70% 60% / 60% 70% 60% 70%;
+    }
+    30% {
+        border-radius: 70% 40% 50% 60% /  50% 40% 60% 70%;
+    }
+    67% {
+        border-radius: 60% 30% 50% 50% / 30% 30% 60% 60%;
+    }
+}
+
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/*------------------ blob top --------------------*/
+body .blob-top {
+    z-index: 1;
+    --footer-background: #ffffff;
+    display: grid;
+    position: relative;
+    grid-area: footer;
+    min-height: 12rem;
+}
+body .blob-top .bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1rem;
+    background: var(--footer-background);
+    -webkit-filter: url("#blob");
+    filter: url("#blob");
+}
+body .blob-top .bubbles .bubble {
+    position: absolute;
+    left: var(--position, 50%);
+    background: var(--footer-background);
+    border-radius: 100%;
+    -webkit-animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+    animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+    -webkit-transform: translate(-50%, 100%);
+    transform: translate(-50%, 100%);
+}
+body .blob-top .content {
+    z-index: 2;
+    display: grid;
+    /*grid-template-columns: 1fr auto;*/
+    /*grid-gap: 4rem;*/
+    /*padding: 2rem;*/
+    background: var(--footer-background);
+}
+body .blob-top .content a, body .footer .content p {
+    color: #000000;
+    text-decoration: none;
+}
+body .blob-top .content b {
+    color: #000000;
+}
+body .blob-top .content p {
+    margin: 0;
+    font-size: .75rem;
+}
+body .blob-top .content > div {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+body .blob-top .content > div > div {
+    margin: 0.25rem 0;
+}
+body .blob-top .content > div > div > * {
+    margin-right: .5rem;
+}
+body .blob-top .content > div .image {
+    background-size: cover;
+    background-position: center;
+}
+
